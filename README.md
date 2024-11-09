@@ -1,5 +1,8 @@
 # CineQuest
 
+[https://github.com/haneefmhmmd/CineQuest/blob/master/Project-Recording.mp4](https://github.com/user-attachments/assets/ff793e37-3fd6-43b9-a5c4-3e7099023907
+)
+
 A full-featured movie streaming platform built with ASP.NET Core MVC. This application allows users to sign up, upload movies, and manage movie details. Other users can view movies, add comments, and rate them. The app uses AWS services for efficient storage and management of movie data.
 
 ## Features
