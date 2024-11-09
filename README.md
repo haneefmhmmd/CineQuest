@@ -63,5 +63,3 @@ To run this project locally, you need to have the following installed:
 ## Author
 
 This project was developed by **Haneef Muhammad** and **Deanne Laylay**.
-# CineQuest
-# CineQuest
