@@ -1,0 +1,331 @@
+﻿.user-container {
+    background: linear-gradient(rgb(0 0 0 / 50%), rgb(19 1 1 / 50%)), url(../images/background.jpg);
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem 0;
+    background-size:cover;
+}
+.user-box {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    max-width: 500px;
+    width: 100%;
+    opacity: .9;
+}
+.welcome-text {
+    font-weight: bold;
+}
+
+h1{
+    font-size: 32px;
+}
+
+h2 {
+    font-size: 28px;
+}
+
+.styled-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.styled-table thead tr {
+    background-color: #3d4955;
+    color: #ffffff;
+    text-align: left;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+
+.styled-table tbody tr {
+    border-bottom: 1px solid #ffffff;
+    background-color: #ffffff;
+    padding: 1px;
+}
+
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f5f5f5;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #f5f5f5;
+}
+
+.btn-upload {
+    background-color: #333;
+    color: white;
+    border-radius: 20px;
+    padding: 10px 20px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+}
+
+.btn-upload:hover {
+    background-color: lightgray;
+    color: black;
+}
+
+.icon-space {
+    margin-right: 7px;
+}
+
+
+.icon-black i {
+    color: black;
+}
+
+.btn-edit {
+    color: #FFC107;
+}
+
+.btn-delete {
+    color: red;
+}
+
+.action-space {
+    margin-right: 10px;
+}
+
+.dark-container {
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    color: white;
+}
+
+.dark-theme {
+    background-color: #212529;
+    color: #ffffff;
+}
+
+.navbar {
+    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.25);
+}
+
+
+.add-container h1 {
+    color: white;
+}
+
+.add-form-label {
+    color: #B8B9B8;
+}
+
+.add-form {
+    color: white;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 500px;
+    width: 100%;
+
+}
+
+.add-box {
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 500px;
+    width: 100%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.add-container {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    min-height: 100vh; 
+}
+
+.card-body{
+    color: black;
+}
+
+.edit-box {
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 500px;
+    width: 100%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.edit-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.edit-form-label {
+    color: #B8B9B8;
+}
+
+.form-control, .form-select {
+    border-color: #393937 !important;
+    background-color: #212529 !important;
+    border-radius: 5px !important;
+    color: #e6e6e6 !important;
+}
+ /*
+.delete-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+}
+
+.delete-box {
+    text-align: center;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.warning {
+    color: #f00;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.cancel {
+    background-color: #ccc;
+    color: #000;
+}
+
+.delete {
+    background-color: #f00;
+    color: #fff;
+} */
+
+/* Center the delete container and apply a shadow for better visibility */
+.delete-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+}
+
+/* Style the delete box with padding, border, and shadow */
+.delete-box {
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    text-align: center;
+}
+
+.delete-box h1 {
+    color: #dc3545; /* Bootstrap's danger color */
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+}
+
+.delete-box h3 {
+    font-size: 1.25rem;
+    color: white;
+    margin-bottom: 1.5rem;
+}
+
+/* Button styles */
+.delete-box .btn {
+    min-width: 100px;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+}
+
+.delete-box .btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+.delete-box .btn-secondary {
+    margin-left: 1rem;
+    color: #fff;
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+
+.alert-danger {
+    font-size: 0.9rem;
+    margin-top: 1rem;
+}
+
+.form-control {
+    border-color: #393937 !important;
+    background-color: #212529 !important;
+    border-radius: 5px !important;
+    color: #e6e6e6 !important;
+}
+
+.movie-card {
+    text-align: left;
+    text-decoration: none;
+    border: none;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+
+.movie-edit-button {
+    border-radius: 50%;
+    width: 32px;
+}
+
+.no-result-msg{
+    font-size: 24px;
+}
+
+.modal-header, .modal-footer {
+    border-color: #393937 !important;
+}
+
+.m-toast-fixed {
+    position: fixed;
+    top: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+}
+
+.movie-app-header {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+ul {
+    list-style: none;
+}
+
+.validation-summary-errors{
+    ul{
+          padding: 0;
+      }
+}

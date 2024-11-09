@@ -1,0 +1,67 @@
+﻿@model IEnumerable<_301301555_301287005_Laylay_Muhammad__Lab3.Models.Movie>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Discover Amazing Movies</h1>
+    <div class="search-bar mb-4 mt-3 d-flex">
+        <form id="searchForm" method="get" action="@Url.Action("SearchByGenre", "Home")">
+            <div class="row">
+                <div class="input-group">
+                    <select id="genreSelect" name="genre" class="form-select">
+                        <option value="">Select Genre</option>
+                        <option value="Action">Action</option>
+                        <option value="Comedy">Comedy</option>
+                        <option value="Drama">Drama</option>
+                        <option value="Horror">Horror</option>
+                        <option value="Science Fiction">Science Fiction</option>
+                    </select>
+                    <button type="submit" class="btn btn-success">Filter by Genre</button>
+                </div>
+            </div>
+        </form>
+        <form class="ms-2" id="searchForm" method="get" action="@Url.Action("SearchByRating", "Home")">
+            <div class="row">
+                <div class="input-group">
+                    <select id="ratingQuery" name="rating" class="form-select">
+                        <option value="">Select Rating</option>
+                        @for (int i = 1; i <= 10; i++)
+                        {
+                            <option value="@i">@i</option>
+                        }
+                    </select>
+                    <button type="submit" class="btn btn-success">Filter by Rating</button>
+                </div>
+            </div>
+        </form>
+        <button type="button" class="btn btn-success ms-auto" onclick="clearFilters()">Clear Filters</button>
+    </div>
+    <div id="topRatedMovies" class="row">
+        @if (Model == null || !Model.Any())
+        {
+            <p class="text-center no-result-msg">Oops! It seems there are no movies available at the moment. Please check back later or try a different search.</p>
+        }
+        @foreach (var movie in Model)
+        {
+            <div class="col-md-4 mb-4">
+                <a class="card text-left movie-card" href="@Url.Action("Index", "Movie", new { movieId = movie.MovieId })">
+                    <img src="@movie.BannerImageHref" class="card-img-top" alt="@movie.Title" height="180">
+                    <div class="card-body">
+                        <h5 class="card-title">@movie.Title</h5>
+                        <div class="d-flex justify-content-between">
+                            <small class="text-muted d-flex align-items-center"><i class="fa-solid fa-star me-2"></i> @movie.Rating / 10</small>
+                            <small class="text-muted">Genre: @movie.Genre</small>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        }
+    </div>
+</div>
+
+<script>
+    function clearFilters() {
+        window.location.href = '@Url.Action("Index", "Home")';
+    }
+</script>

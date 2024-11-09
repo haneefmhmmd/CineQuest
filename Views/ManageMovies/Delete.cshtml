@@ -1,0 +1,35 @@
+﻿@model Movie
+
+@{
+    ViewData["Title"] = "Delete Movie";
+}
+
+<div class="delete-container mt-5">
+    <div class="delete-box">
+		<h1 class="text-center">Delete Movie?</h1>
+
+		<h4>Are you sure you want to delete the movie "<strong>@Model.Title</strong>"?</h4>
+		<p>You can't undo this action.</p>
+
+
+		<form asp-action="DeleteConfirm" method="post">
+			@Html.AntiForgeryToken()
+			<input type="hidden" name="id" value="@Model.MovieId" />
+			<div class="mt-3">
+				<button type="submit" class="btn btn-danger">Delete</button>
+				<a asp-action="Index" class="btn btn-secondary">Cancel</a>
+			</div>
+		</form>
+
+		@if (!ViewData.ModelState.IsValid)
+		{
+			<div class="alert alert-danger mt-3">
+				@foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+				{
+					<p>@error.ErrorMessage</p>
+				}
+			</div>
+		}
+    </div>
+
+</div>

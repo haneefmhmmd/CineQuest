@@ -1,0 +1,49 @@
+﻿@model IEnumerable<_301301555_301287005_Laylay_Muhammad__Lab3.Models.Movie>
+
+@{
+    ViewData["Title"] = "Movies List";
+}
+
+<div class="container mt-5 dark-container">
+    <div class="mb-3 d-flex justify-content-between align-items-center">
+        <h1 class="text-left">Manage My Movies</h1>
+        <a asp-action="Create" class="btn btn-upload"><i class="fa-solid fa-upload icon-space"></i>Upload</a>
+    </div>
+    <table class="table styled-table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Movie Name</th>
+                <th scope="col">Genre</th>
+                <th scope="col">Director</th>
+                <th scope="col">Release Time</th>
+                <th scope="col">Rating</th>
+                <th scope="col" style="width: 150px;">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.Any())
+            {
+                foreach (var movie in Model)
+                {
+                    <tr>
+                        <td>@movie.Title</td>
+                        <td>@movie.Genre</td>
+                        <td>@movie.Director</td>
+                        <td>@movie.ReleaseTime</td>
+                        <td>@movie.Rating</td>
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@movie.MovieId" class="btn-edit"><i class="fa-solid fa-pen action-space"></i></a>
+                            <a asp-action="Delete" asp-route-id="@movie.MovieId" class="btn-delete"><i class="fa-solid fa-trash action-space"></i></a>
+                        </td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="6" class="text-center py-4">No movies found.</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

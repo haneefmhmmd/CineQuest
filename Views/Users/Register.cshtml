@@ -1,0 +1,52 @@
+﻿@model _301301555_301287005_Laylay_Muhammad__Lab3.Models.User
+
+@{
+    ViewData["Title"] = "Register";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+
+}
+<!-- Toast for displaying the "username already exists" message -->
+@if (TempData["RegisterError"] != null)
+{
+    <div class="toast show align-items-center text-white bg-danger border-0 m-toast-fixed" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="d-flex">
+            <div class="toast-body">
+                @TempData["RegisterError"]
+            </div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+    </div>
+}
+<div class="user-container">
+    <div class="user-box dark-theme">
+        <h2 class="text-center mb-4">Register</h2>
+        <form asp-action="Register" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="mb-3">
+                <label asp-for="FullName" class="form-label">Full Name</label>
+                <input asp-for="FullName" class="form-control" />
+                <span asp-validation-for="FullName" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Username" class="form-label"></label>
+                <input asp-for="Username" class="form-control" />
+                <span asp-validation-for="Username" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="PasswordHash" class="form-label">Password</label>
+                <input asp-for="PasswordHash" class="form-control" type="password" />
+                <span asp-validation-for="PasswordHash" class="text-danger"></span>
+            </div>
+            <input type="submit" value="Register" class="btn btn-success w100 p-2" />
+            <p class="text-center mt-2">
+                Already have an account? <a asp-asp-controller="User" asp-action="Login" class="text-decoration-none">Login</a>
+            </p>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -1,0 +1,82 @@
+﻿@model _301301555_301287005_Laylay_Muhammad__Lab3.Models.CreateMovie
+
+@{
+    ViewData["Title"] = "Add Movie";
+}
+
+<div class="add-container mt-5">
+    <div class="add-box">
+        <h1 class="text-center">Add New Movie</h1>
+
+        <form asp-action="Create" method="post" enctype="multipart/form-data" class="add-form">
+
+            @Html.AntiForgeryToken()
+
+            <div class="mb-3">
+                <label asp-for="Title" class="form-label add-form-label"></label>
+                <input asp-for="Title" class="form-control add-form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Genre" class="form-label add-form-label"></label>
+                <select asp-for="Genre" class="form-select">
+                    <option value="">Select Genre</option>
+                    <option value="Action">Action</option>
+                    <option value="Comedy">Comedy</option>
+                    <option value="Drama">Drama</option>
+                    <option value="Horror">Horror</option>
+                    <option value="Science Fiction">Science Fiction</option>
+                </select>
+                <span asp-validation-for="Genre" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Director" class="form-label add-form-label"></label>
+                <input asp-for="Director" class="form-control add-form-control" />
+                <span asp-validation-for="Director" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="ReleaseTime" class="form-label add-form-label">Release Time</label>
+                <input asp-for="ReleaseTime" type="datetime-local" class="form-control add-form-control" />
+                <span asp-validation-for="ReleaseTime" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Rating" class="form-label add-form-label"></label>
+                <select asp-for="Rating" class="form-select">
+                    <option value="">Select Rating</option>
+                    @for (int i = 1; i <= 10; i++)
+                    {
+                        <option value="@i">@i</option>
+                    }
+                </select>
+                <span asp-validation-for="Rating" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label for="MovieFile" class="form-label add-form-label">Upload Movie</label>
+                <input type="file" name="MovieFile" class="form-control add-form-control" accept="video/*" />
+                <span asp-validation-for="MovieFile" class="text-danger"></span>
+            </div>
+
+
+            <div class="mb-3">
+                <label for="BannerImageFile" class="form-label add-form-label">Upload Banner Image</label>
+                <input type="file" name="BannerImageFile" class="form-control add-form-control" accept="image/*" />
+                <span asp-validation-for="BannerImageFile" class="text-danger"></span>
+            </div>
+
+
+            <button type="submit" class="btn btn-primary">Add Movie</button>
+        </form>
+    </div>
+    
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
